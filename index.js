@@ -10,6 +10,11 @@ app.get('/',(req,res)=>{
     res.sendFile('/views/home.html', { root: __dirname })
 })
 
+app.get('/about',(req,res)=>{
+    res.sendFile('/views/about.html', { root: __dirname })
+})
+
+
 app.listen(5000,()=>{
     console.log("Server running on 5000")
 })
