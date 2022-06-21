@@ -14,6 +14,9 @@ app.get('/about',(req,res)=>{
     res.sendFile('/views/about.html', { root: __dirname })
 })
 
+app.get('/aboutme',(req,res)=>{
+    res.redirect('/about')
+})
 
 app.listen(5000,()=>{
     console.log("Server running on 5000")
