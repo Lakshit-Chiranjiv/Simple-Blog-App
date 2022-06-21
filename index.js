@@ -1,9 +1,13 @@
 import express from "express";
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 app.get('/',(req,res)=>{
-    res.json({msg: 'server is on'})
+    res.sendFile('/views/home.html', { root: __dirname })
 })
 
 app.listen(5000,()=>{
