@@ -9,11 +9,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.set('view engine','ejs')
 
 app.get('/',(req,res)=>{
-    res.sendFile('/views/home.html', { root: __dirname })
+    // res.sendFile('/views/home.html', { root: __dirname })
+    res.render('home')
 })
 
 app.get('/about',(req,res)=>{
-    res.sendFile('/views/about.html', { root: __dirname })
+    // res.sendFile('/views/about.html', { root: __dirname })
+    res.render('about')
 })
 
 app.get('/aboutme',(req,res)=>{
