@@ -23,16 +23,14 @@ app.get('/aboutme',(req,res)=>{
 })
 
 app.get('*',(req,res)=>{
-    res.json({
-        msg: '404'
-    })
+    res.render('404')
 })
 
-app.use((req,res) => {
-    res.json({
-        msg: '404 again'
-    })
-})
+// app.use((req,res) => {
+//     res.json({
+//         msg: '404 again'
+//     })
+// })
 
 app.listen(5000,()=>{
     console.log("Server running on 5000")
