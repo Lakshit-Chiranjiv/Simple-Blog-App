@@ -6,6 +6,8 @@ const app = express();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+app.set('view engine','ejs')
+
 app.get('/',(req,res)=>{
     res.sendFile('/views/home.html', { root: __dirname })
 })
