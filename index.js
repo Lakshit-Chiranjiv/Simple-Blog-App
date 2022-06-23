@@ -8,6 +8,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set('view engine','ejs')
 
+app.get('/normalizecss',(req,res)=>{
+    res.sendFile('./node_modules/normalize.css/normalize.css', { root: __dirname })
+})
+
+app.get('/milligramcss',(req,res)=>{
+    res.sendFile('./node_modules/milligram/dist/milligram.css', { root: __dirname })
+})
+
 app.get('/',(req,res)=>{
     // res.sendFile('/views/home.html', { root: __dirname })
     res.render('home')
