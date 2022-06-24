@@ -16,6 +16,10 @@ app.get('/milligramcss',(req,res)=>{
     res.sendFile('./node_modules/milligram/dist/milligram.css', { root: __dirname })
 })
 
+app.get('/selfcss',(req,res)=>{
+    res.sendFile('./styles/style.css', { root: __dirname })
+})
+
 app.get('/',(req,res)=>{
     // res.sendFile('/views/home.html', { root: __dirname })
     res.render('home')
