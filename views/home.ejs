@@ -5,14 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-    <link rel="stylesheet" href="/normalizecss">
-    <link rel="stylesheet" href="/milligramcss">
+    <!-- <link rel="stylesheet" href="/normalizecss">
+    <link rel="stylesheet" href="/milligramcss"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="/selfcss">
     <title>Home</title>
 </head>
-<body>
-    <h1>Home Page</h1>
+
+<body class="container">
+    <!-- <h1>Bazle Blog</h1>
     <a href="/">Home</a><br>
     <a href="/about">About</a>
-    <a class="button" href="#">Default Buttons</a>
+    <a class="button" href="#">Default Buttons</a> -->
+    <nav class="row">
+        <a href="/" class="button button-clear column"><h1>Bazzle Blog</h1></a>
+        <a href="/create" class="button button-clear column column-offset-50 nav-link">Create</a>
+        <a href="/about" class="button button-clear column nav-link">About</a>
+        <a href="/contact" class="button button-clear column nav-link">Contact</a>
+    </nav>
 </body>
 </html>
