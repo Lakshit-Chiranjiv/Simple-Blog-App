@@ -6,6 +6,10 @@ body{
     color: green;
 }
 
+.nav{
+    padding: 40px;
+}
+
 h1{
     font-weight: 700;
 }
