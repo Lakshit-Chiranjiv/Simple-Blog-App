@@ -35,6 +35,12 @@ button.button-outline{
     border-color: var(--primary-color);
 }
 
+input[type="submit"]{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    width: 100%;
+}
+
 main div{
     margin: 40px auto;
 }
