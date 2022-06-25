@@ -147,3 +147,11 @@ h1#createHeading{
     margin: 40px 0;
     text-align: center;
 }
+
+footer p{
+    text-align: center;
+}
+
+footer a{
+    color: var(--primary-color);
+}
