@@ -179,3 +179,24 @@ footer a{
 .about h3:hover,.about h5:hover{
     color: var(--primary-color);
 }
+
+.contact{
+    display: grid;
+    place-items: center;
+}
+
+.contact .medium{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact p{
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.contact p:hover{
+    color: var(--primary-color);
+    cursor: pointer;
+}
