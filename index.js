@@ -26,16 +26,16 @@ app.get('/404err',(req,res)=>{
 
 app.get('/',(req,res)=>{
     // res.sendFile('/views/home.html', { root: __dirname })
-    res.render('home')
+    res.render('home',{ title: 'Home' })
 })
 
 app.get('/create',(req,res)=>{
-    res.render('create')
+    res.render('create',{ title: 'Create' })
 })
 
 app.get('/about',(req,res)=>{
     // res.sendFile('/views/about.html', { root: __dirname })
-    res.render('about')
+    res.render('about',{ title: 'About' })
 })
 
 app.get('/aboutme',(req,res)=>{
@@ -43,7 +43,7 @@ app.get('/aboutme',(req,res)=>{
 })
 
 app.get('*',(req,res)=>{
-    res.render('404')
+    res.render('404',{ title: '404 Error' })
 })
 
 // app.use((req,res) => {
