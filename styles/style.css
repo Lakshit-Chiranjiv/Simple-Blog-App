@@ -26,11 +26,15 @@ h1{
     color: var(--primary-color);
 }
 
-main div.headText{
-    max-width: 500px;
+main div{
     margin: 40px auto;
 }
 
-main h1{
+main div.headText{
+    max-width: 500px;
+    margin-bottom: 80px;
+}
+
+main{
     text-align: center;
 }
