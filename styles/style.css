@@ -26,7 +26,7 @@ h1{
     color: var(--primary-color);
 }
 
-main div{
+main div.headText{
     max-width: 500px;
     margin: 40px auto;
 }
