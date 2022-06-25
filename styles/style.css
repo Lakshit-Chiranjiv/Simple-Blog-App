@@ -39,6 +39,6 @@ main div.headText{
     margin-bottom: 80px;
 }
 
-main{
+main h1,h3{
     text-align: center;
 }
