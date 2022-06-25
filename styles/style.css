@@ -6,7 +6,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: #e1e1e1;
+    background-color: #e0e0e0;
 }
 
 hr{
@@ -41,4 +41,26 @@ main div.headText{
 
 main h1,h3{
     text-align: center;
+}
+
+.blog-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.blogCard{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+    min-height: 200px;
+    box-shadow: 6px 6px 12px #bebebe,
+    -6px -6px 12px #f2f2f2;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.blogCard:hover{
+    transform: scale(1.05);
 }
