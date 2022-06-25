@@ -1,12 +1,15 @@
 import express from "express";
 import path from 'path';
 import { fileURLToPath } from 'url';
+import morgan from 'morgan';
 
 const app = express();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set('view engine','ejs')
+
+app.use(morgan('dev'))
 
 app.get('/normalizecss',(req,res)=>{
     res.sendFile('./node_modules/normalize.css/normalize.css', { root: __dirname })
