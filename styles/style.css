@@ -142,3 +142,8 @@ input#blogTags{
 .addedTags p{
     font-size: 14px;
 }
+
+h1#createHeading{
+    margin: 40px 0;
+    text-align: center;
+}
