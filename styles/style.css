@@ -119,3 +119,7 @@ textarea:focus {
   border-color: var(--primary-color);
   outline: 0;
 }
+
+textarea{
+    height: 150px;
+}
