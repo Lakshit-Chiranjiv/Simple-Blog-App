@@ -9,6 +9,10 @@ body{
     background-color: #e1e1e1;
 }
 
+hr{
+    background-color: #bcbcbc;
+}
+
 .nav{
     padding: 40px 0;
 }
