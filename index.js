@@ -20,6 +20,10 @@ app.get('/selfcss',(req,res)=>{
     res.sendFile('./styles/style.css', { root: __dirname })
 })
 
+app.get('/404err',(req,res)=>{
+    res.sendFile('./assets/404err.png', { root: __dirname })
+})
+
 app.get('/',(req,res)=>{
     // res.sendFile('/views/home.html', { root: __dirname })
     res.render('home')
