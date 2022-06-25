@@ -25,6 +25,10 @@ app.get('/',(req,res)=>{
     res.render('home')
 })
 
+app.get('/create',(req,res)=>{
+    res.render('create')
+})
+
 app.get('/about',(req,res)=>{
     // res.sendFile('/views/about.html', { root: __dirname })
     res.render('about')
