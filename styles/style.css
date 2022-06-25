@@ -30,6 +30,11 @@ h1{
     color: var(--primary-color);
 }
 
+button.button-outline{
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 main div{
     margin: 40px auto;
 }
@@ -97,4 +102,14 @@ main h1,h3{
 
 .btnAndDetails button{
     background-color: var(--primary-color);
+}
+
+fieldset{
+    margin: 40px 0;
+}
+
+input[type='text']:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: 0;
 }
