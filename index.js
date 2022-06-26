@@ -30,8 +30,22 @@ app.get('/milligramcss',(req,res)=>{
 // })
 
 app.get('/',(req,res)=>{
+    const blogs = [
+        {
+            blogTitle: 'Docker Tutorials',
+            blogBody: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis quia ducimus, error quo ullam rerum optio minima repellendus reprehenderit. At sint amet eaque ipsum veniam. Dignissimos, necessitatibus nobis excepturi porro corrupti, inventore suscipit ipsa quia doloribus aliquam, alias quam veniam!',
+            readBy: 424,
+            tags: ['Docker','Devops','Web Dev']
+        },
+        {
+            blogTitle: 'Node Tutorials',
+            blogBody: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis quia ducimus, error quo ullam rerum optio minima repellendus reprehenderit. At sint amet eaque ipsum veniam. Dignissimos, necessitatibus nobis excepturi porro corrupti, inventore suscipit ipsa quia doloribus aliquam, alias quam veniam!',
+            readBy: 492,
+            tags: ['Node JS','Express JS','Backend Web Dev']
+        }
+    ]
     // res.sendFile('/views/home.html', { root: __dirname })
-    res.render('home',{ title: 'Home' })
+    res.render('home',{ title: 'Home' , blogs})
 })
 
 app.get('/create',(req,res)=>{
