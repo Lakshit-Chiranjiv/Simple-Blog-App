@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import morgan from 'morgan';
 import { MONGO_DB_URI } from './dbConfig.js';
 import mongoose from "mongoose";
+import BlogModel from "./models/blogModel.js";
 
 const app = express();
 
@@ -38,6 +39,21 @@ app.get('/milligramcss',(req,res)=>{
 
 // app.get('/404err',(req,res)=>{
 //     res.sendFile('./assets/404err.png', { root: __dirname })
+// })
+
+// app.get('/add',(req,res) => {
+//     const blog = new BlogModel(
+//         {
+//             blogTitle: 'Milligram CSS Tutorials',
+//             blogBody: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis quia ducimus, error quo ullam rerum optio minima repellendus reprehenderit. At sint amet eaque ipsum veniam. Dignissimos, necessitatibus nobis excepturi porro corrupti, inventore suscipit ipsa quia doloribus aliquam, alias quam veniam!',
+//             readBy: 122,
+//             tags: ['CSS','Framework']
+//         }
+//     )
+
+//     blog.save()
+//         .then(result => res.json(result))
+//         .catch(err => res.json({ msg: 'Some error occured' }))
 // })
 
 app.get('/',(req,res)=>{
