@@ -2,8 +2,19 @@ import express from "express";
 import path from 'path';
 import { fileURLToPath } from 'url';
 import morgan from 'morgan';
+import { MONGO_DB_URI } from './dbConfig.js';
+import mongoose from "mongoose";
 
 const app = express();
+
+mongoose.connect(MONGO_DB_URI)
+    .then(result => {
+        console.log("Connected to DB")
+        app.listen(5000,()=>{
+            console.log("Server running on 5000")
+        })
+    })
+    .catch(err => console.log(err))
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -75,6 +86,6 @@ app.get('*',(req,res)=>{
 //     })
 // })
 
-app.listen(5000,()=>{
-    console.log("Server running on 5000")
-})
+// app.listen(5000,()=>{
+//     console.log("Server running on 5000")
+// })
