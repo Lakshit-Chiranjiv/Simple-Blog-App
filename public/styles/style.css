@@ -27,6 +27,10 @@ h1{
     font-size: 16px;
 }
 
+.button{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
 .button.button-clear{
     color: var(--primary-color);
 }
@@ -199,4 +203,8 @@ footer a{
 .contact p:hover{
     color: var(--primary-color);
     cursor: pointer;
+}
+
+.noBlogDiv{
+    text-align: center;
 }
