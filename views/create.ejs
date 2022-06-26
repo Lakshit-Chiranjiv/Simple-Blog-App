@@ -10,14 +10,14 @@
         <form>
             <fieldset>
             <label for="blogTitle">Blog Title</label>
-            <input type="text" placeholder="Javascript Tuts..." id="blogTitle">
+            <input type="text" name="blogTitle" placeholder="Javascript Tuts..." id="blogTitle">
             <label for="blogBody">Blog Body</label>
-            <textarea placeholder="Your Blog..." id="blogBody"></textarea>
+            <textarea placeholder="Your Blog..." name="blogBody" id="blogBody"></textarea>
             <label for="blogTags">Blog Tags</label>
             <input type="text" placeholder="Javascript" id="blogTags">
-            <button class="button-outline">Add Tag</button><br>
-            <div class="addedTags">
-                <p>No Tags!!</p>
+            <button class="button-outline" id="addTagBtn">Add Tag</button><br>
+            <div class="addedTags" id="addedTagsDiv">
+                <p id="noTagMsg">No Tags!!</p>
             </div>
             <input class="button-primary" type="submit" value="Create Blog">
             </fieldset>
@@ -25,4 +25,25 @@
         <%- include('./partials/footer.ejs') %> 
     </div>
 </body>
+
+<script>
+    const addTagBtn = document.querySelector('#addTagBtn');
+    const tagField = document.querySelector('#blogTags');
+    const noTagMsg = document.querySelector('#noTagMsg');
+    let tagsDiv = document.querySelector('#addedTagsDiv');
+    let blogTags = []
+    addTagBtn.addEventListener('click',(e)=>{
+        e.preventDefault()
+        if(tagField.value.length > 0){
+            const pill = document.createElement('div');
+            pill.classList.add('pill');
+            pill.appendChild(document.createTextNode(tagField.value));
+            if(document.querySelector('#noTagMsg'))
+                noTagMsg.remove();
+            tagsDiv.appendChild(pill);
+            blogTags.push(tagField.value)
+            tagField.value = ''
+        }
+    })
+</script>
 </html>
