@@ -14,20 +14,28 @@
             <h3>Go through some Bazzling Blogs...</h3>
             <hr>
             <div class="blog-cards">
-                <% blogs.forEach(blog => { %>
-                    <div class="blogCard">
-                        <h2><%= blog.blogTitle %></h2>
-                        <div class="pills">
-                            <% blog.tags.forEach(tag => { %>
-                                <div class="pill"><%= tag %> </div>
-                            <% }) %> 
+                <% if(blogs.length > 2) {%>
+                    <% blogs.forEach(blog => { %>
+                        <div class="blogCard">
+                            <h2><%= blog.blogTitle %></h2>
+                            <div class="pills">
+                                <% blog.tags.forEach(tag => { %>
+                                    <div class="pill"><%= tag %> </div>
+                                <% }) %> 
+                            </div>
+                            <div class="btnAndDetails">
+                                <p class="readby">read by <%= blog.readBy %>  people</p>
+                                <button class="button">Read</button>
+                            </div>
                         </div>
-                        <div class="btnAndDetails">
-                            <p class="readby">read by <%= blog.readBy %>  people</p>
-                            <button class="button">Read</button>
-                        </div>
+                    <% }) %>  
+                <% } else {%>
+                    <div class="noBlogDiv">
+                        <h4>No Blogs to Read</h4>
+                        <h4>Lets Add some</h4>
+                        <button class="button">Create a Blog</button>
                     </div>
-                <% }) %> 
+                <% } %> 
             </div>
         </div>
     </main>
