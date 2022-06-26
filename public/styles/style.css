@@ -208,3 +208,7 @@ footer a{
 .noBlogDiv{
     text-align: center;
 }
+
+.noTagDiv{
+    margin: 0;
+}
