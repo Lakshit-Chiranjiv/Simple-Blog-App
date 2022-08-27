@@ -20,8 +20,9 @@ mongoose.connect(MONGO_DB_URI)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set('view engine','ejs')
-
-app.use(morgan('dev'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+// app.use(morgan('dev'))
 
 app.use(express.static('public'))
 
@@ -82,6 +83,11 @@ app.get('/aboutme',(req,res)=>{
 
 app.get('*',(req,res)=>{
     res.render('404',{ title: '404 Error' })
+})
+
+app.post('/addblog',(req,res) => {
+    console.log(req.body.blogTitle+'cs')
+    res.redirect('/')
 })
 
 // app.use((req,res) => {
