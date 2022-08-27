@@ -19,7 +19,7 @@
             <div class="addedTags" id="addedTagsDiv">
                 <p id="noTagMsg">No Tags!!</p>
             </div>
-            <input class="button-primary" type="submit" value="Create Blog">
+            <input class="button-primary" type="submit" value="Create Blog" id="createBtn">
             </fieldset>
         </form>
         <%- include('./partials/footer.ejs') %> 
@@ -44,6 +44,25 @@
             blogTags.push(tagField.value)
             tagField.value = ''
         }
+    })
+
+    const createBlogBtn = document.querySelector('#createBtn')
+    const blogTitleField = document.querySelector('#blogTitle')
+    const blogBodyField = document.querySelector('#blogBody')
+    createBlogBtn.addEventListener('click',async(e) => {
+        e.preventDefault();
+        const blogData = {
+            blogTitle: blogTitleField.value,
+            blogBody: blogBodyField.value,
+            tags: blogTags
+        }
+        await fetch('http://localhost:5000/addblog', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(blogData)
+        });
     })
 </script>
 </html>
