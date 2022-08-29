@@ -81,14 +81,25 @@ app.get('/aboutme',(req,res)=>{
     res.redirect('/about')
 })
 
+app.post('/addblog',(req,res) => {
+    const blog = new BlogModel(req.body)
+    blog.save()
+        .then((result)=>{
+            console.log(result)
+            res.redirect('/')
+        })
+        .catch((err)=>{
+            console.log("Some error",err);
+        })
+})
+
 app.get('*',(req,res)=>{
     res.render('404',{ title: '404 Error' })
 })
 
-app.post('/addblog',(req,res) => {
-    console.log(req.body.blogTitle+'cs')
-    res.redirect('/')
-})
+
+
+
 
 // app.use((req,res) => {
 //     res.json({
