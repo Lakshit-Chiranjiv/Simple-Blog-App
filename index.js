@@ -93,6 +93,13 @@ app.post('/addblog',(req,res) => {
         })
 })
 
+app.get('/blogs/:id',async(req,res) => {
+    const { id } = req.params;
+
+    const blog = await BlogModel.findById(id)
+    res.render('details', { blog, title: blog.blogTitle })
+})
+
 app.get('*',(req,res)=>{
     res.render('404',{ title: '404 Error' })
 })
