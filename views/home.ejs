@@ -31,7 +31,9 @@
                             </div>
                             <div class="btnAndDetails">
                                 <p class="readby">read by <%= blog.readBy %>  people</p>
-                                <button class="button">Read</button>
+                                <a href="/blogs/<%= blog._id %> ">
+                                    <button class="button">Read</button>
+                                </a>
                             </div>
                         </div>
                     <% }) %>  
