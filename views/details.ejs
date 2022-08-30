@@ -9,6 +9,8 @@
         <h1><%= blog.blogTitle  %> </h1>
 
         <p><%= blog.blogBody  %> </p>
+        <hr>
+        <p id="readInd">Read by <%= blog.readBy+1  %> people</p>
         <%- include('./partials/footer.ejs') %> 
     </div>
 </body>
