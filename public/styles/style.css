@@ -226,3 +226,9 @@ p#readInd{
     background-color: #ff6464;
     border: 1px solid #ff6464;
 }
+
+@media screen and (max-width: 810px){
+    .blogCard{
+        width: 90%;
+    }
+}
