@@ -86,7 +86,7 @@ app.post('/addblog',(req,res) => {
     blog.save()
         .then((result)=>{
             console.log(result)
-            res.redirect('/')
+            res.json({redirectUrl: '/'})
         })
         .catch((err)=>{
             console.log("Some error",err);
