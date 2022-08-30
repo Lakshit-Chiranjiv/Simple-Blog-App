@@ -11,7 +11,14 @@
         <p><%= blog.blogBody  %> </p>
         <hr>
         <p id="readInd">Read by <%= blog.readBy+1  %> people</p>
-        <a id="del" data-docid="<%= blog._id  %> ">Delete</a>
+        <div class="detailBtns">
+            <a id="del" data-docid="<%= blog._id  %>">
+                <button class="button delBtn">Delete</button>
+            </a>
+            <a href="/">
+                <button class="button">Back</button>
+            </a>
+        </div>
         <%- include('./partials/footer.ejs') %> 
     </div>
 
