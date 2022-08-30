@@ -58,9 +58,13 @@ app.get('/milligramcss',(req,res)=>{
 // })
 
 app.get('/',(req,res)=>{
-    BlogModel.find().sort({ createdAt: -1 })
+    try {
+        BlogModel.find().sort({ createdAt: -1 })
         .then(blogs => res.render('home',{ title: 'Home' , blogs}))
         .catch(err => console.log(err))
+    } catch (error) {
+        console.log("Some error :",error)
+    }
     // res.sendFile('/views/home.html', { root: __dirname })
 })
 
@@ -96,16 +100,24 @@ app.post('/addblog',(req,res) => {
 app.get('/blogs/:id',async(req,res) => {
     const { id } = req.params;
 
-    const blog = await BlogModel.findById(id)
-    const updateResult = await BlogModel.findByIdAndUpdate(id,{ $inc: { readBy: 1 } })
-    res.render('details', { blog, title: blog.blogTitle })
+    try {
+        const blog = await BlogModel.findById(id)
+        const updateResult = await BlogModel.findByIdAndUpdate(id,{ $inc: { readBy: 1 } })
+        res.render('details', { blog, title: blog.blogTitle })
+    } catch (error) {
+        console.log("Some error :",error)
+    }
 })
 
 app.delete('/delBlog/:id',async(req,res) => {
     const { id } = req.params;
 
-    await BlogModel.findByIdAndDelete(id);
-    res.json({redirectUrl: '/'})
+    try {
+        await BlogModel.findByIdAndDelete(id);
+        res.json({redirectUrl: '/'})
+    } catch (error) {
+        console.log("Some error :",error)
+    }
 })
 
 app.get('*',(req,res)=>{
