@@ -101,6 +101,13 @@ app.get('/blogs/:id',async(req,res) => {
     res.render('details', { blog, title: blog.blogTitle })
 })
 
+app.delete('/delBlog/:id',async(req,res) => {
+    const { id } = req.params;
+
+    await BlogModel.findByIdAndDelete(id);
+    res.json({redirectUrl: '/'})
+})
+
 app.get('*',(req,res)=>{
     res.render('404',{ title: '404 Error' })
 })
