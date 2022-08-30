@@ -216,3 +216,13 @@ footer a{
 p#readInd{
     font-size: smaller;
 }
+
+.detailBtns{
+    display: flex;
+    gap: 10px;
+}
+
+.delBtn{
+    background-color: #ff6464;
+    border: 1px solid #ff6464;
+}
