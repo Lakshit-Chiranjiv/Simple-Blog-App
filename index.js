@@ -97,6 +97,7 @@ app.get('/blogs/:id',async(req,res) => {
     const { id } = req.params;
 
     const blog = await BlogModel.findById(id)
+    const updateResult = await BlogModel.findByIdAndUpdate(id,{ $inc: { readBy: 1 } })
     res.render('details', { blog, title: blog.blogTitle })
 })
 
