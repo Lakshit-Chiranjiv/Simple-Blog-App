@@ -212,3 +212,7 @@ footer a{
 .noTagDiv{
     margin: 0;
 }
+
+p#readInd{
+    font-size: smaller;
+}
