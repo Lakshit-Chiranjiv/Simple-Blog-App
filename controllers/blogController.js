@@ -32,3 +32,16 @@ const renderContactPage = (req,res)=>{
 const redirectAboutPage = (req,res)=>{
     res.redirect('/about')
 }
+
+//add a blog
+const addBlog = (req,res) => {
+    const blog = new BlogModel(req.body)
+    blog.save()
+        .then((result)=>{
+            console.log(result)
+            res.json({redirectUrl: '/'})
+        })
+        .catch((err)=>{
+            console.log("Some error",err);
+        })
+}
