@@ -27,3 +27,8 @@ const renderAboutPage = (req,res)=>{
 const renderContactPage = (req,res)=>{
     res.render('contact',{ title: 'Contact' })
 }
+
+//redirect to about page
+const redirectAboutPage = (req,res)=>{
+    res.redirect('/about')
+}
