@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import morgan from 'morgan';
 import { MONGO_DB_URI } from './dbConfig.js';
 import mongoose from "mongoose";
-import BlogModel from "./models/blogModel.js";
+import BlogRouter from "./routes/blogRoutes.js";
 
 const app = express();
 
@@ -57,68 +57,7 @@ app.get('/milligramcss',(req,res)=>{
 //         .catch(err => res.json({ msg: 'Some error occured' }))
 // })
 
-app.get('/',(req,res)=>{
-    try {
-        BlogModel.find().sort({ createdAt: -1 })
-        .then(blogs => res.render('home',{ title: 'Home' , blogs}))
-        .catch(err => console.log(err))
-    } catch (error) {
-        console.log("Some error :",error)
-    }
-    // res.sendFile('/views/home.html', { root: __dirname })
-})
-
-app.get('/create',(req,res)=>{
-    res.render('create',{ title: 'Create' })
-})
-
-app.get('/about',(req,res)=>{
-    // res.sendFile('/views/about.html', { root: __dirname })
-    res.render('about',{ title: 'About' })
-})
-
-app.get('/contact',(req,res)=>{
-    res.render('contact',{ title: 'Contact' })
-})
-
-app.get('/aboutme',(req,res)=>{
-    res.redirect('/about')
-})
-
-app.post('/addblog',(req,res) => {
-    const blog = new BlogModel(req.body)
-    blog.save()
-        .then((result)=>{
-            console.log(result)
-            res.json({redirectUrl: '/'})
-        })
-        .catch((err)=>{
-            console.log("Some error",err);
-        })
-})
-
-app.get('/blogs/:id',async(req,res) => {
-    const { id } = req.params;
-
-    try {
-        const blog = await BlogModel.findById(id)
-        const updateResult = await BlogModel.findByIdAndUpdate(id,{ $inc: { readBy: 1 } })
-        res.render('details', { blog, title: blog.blogTitle })
-    } catch (error) {
-        console.log("Some error :",error)
-    }
-})
-
-app.delete('/delBlog/:id',async(req,res) => {
-    const { id } = req.params;
-
-    try {
-        await BlogModel.findByIdAndDelete(id);
-        res.json({redirectUrl: '/'})
-    } catch (error) {
-        console.log("Some error :",error)
-    }
-})
+app.use('/bazzle',BlogRouter)
 
 app.get('*',(req,res)=>{
     res.render('404',{ title: '404 Error' })
