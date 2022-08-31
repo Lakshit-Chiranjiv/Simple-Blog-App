@@ -1,4 +1,4 @@
-import BlogModel from "../models/blogModel"
+import BlogModel from "../models/blogModel.js"
 
 //get all blogs
 const getAllBlogs = (req,res)=>{
@@ -70,3 +70,5 @@ const deleteBlog = async(req,res) => {
         console.log("Some error :",error)
     }
 }
+
+export { addBlog,deleteBlog,getAllBlogs,getSingleBlog,redirectAboutPage,renderAboutPage,renderContactPage,renderCreatePage }
