@@ -4,7 +4,7 @@ import BlogModel from "../models/blogModel.js"
 const getAllBlogs = (req,res)=>{
     try {
         BlogModel.find().sort({ createdAt: -1 })
-        .then(blogs => res.render('home',{ title: 'Home' , blogs}))
+        .then(blogs => res.render('blogs/home',{ title: 'Home' , blogs}))
         .catch(err => console.log(err))
     } catch (error) {
         console.log("Some error :",error)
@@ -14,7 +14,7 @@ const getAllBlogs = (req,res)=>{
 
 //render create page
 const renderCreatePage = (req,res)=>{
-    res.render('create',{ title: 'Create' })
+    res.render('blogs/create',{ title: 'Create' })
 }
 
 //render about page
@@ -53,7 +53,7 @@ const getSingleBlog = async(req,res) => {
     try {
         const blog = await BlogModel.findById(id)
         const updateResult = await BlogModel.findByIdAndUpdate(id,{ $inc: { readBy: 1 } })
-        res.render('details', { blog, title: blog.blogTitle })
+        res.render('blogs/details', { blog, title: blog.blogTitle })
     } catch (error) {
         console.log("Some error :",error)
     }
