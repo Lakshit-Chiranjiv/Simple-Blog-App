@@ -24,8 +24,7 @@
 
     <script>
         const delBtn = document.querySelector('#del')
-        const delEndpoint = `/delBlog/${delBtn.dataset.docid}`
-
+        const delEndpoint = `/bazzle/delBlog/${delBtn.dataset.docid}`
         delBtn.addEventListener('click',async()=>{
             const response = await fetch(delEndpoint,{
                 method: 'DELETE'
