@@ -22,3 +22,8 @@ const renderAboutPage = (req,res)=>{
     // res.sendFile('/views/about.html', { root: __dirname })
     res.render('about',{ title: 'About' })
 }
+
+//render contact page
+const renderContactPage = (req,res)=>{
+    res.render('contact',{ title: 'Contact' })
+}
