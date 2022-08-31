@@ -16,3 +16,9 @@ const getAllBlogs = (req,res)=>{
 const renderCreatePage = (req,res)=>{
     res.render('create',{ title: 'Create' })
 }
+
+//render about page
+const renderAboutPage = (req,res)=>{
+    // res.sendFile('/views/about.html', { root: __dirname })
+    res.render('about',{ title: 'About' })
+}
