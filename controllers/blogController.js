@@ -39,7 +39,7 @@ const addBlog = (req,res) => {
     blog.save()
         .then((result)=>{
             console.log(result)
-            res.json({redirectUrl: '/'})
+            res.json({redirectUrl: '/bazzle'})
         })
         .catch((err)=>{
             console.log("Some error",err);
@@ -65,7 +65,7 @@ const deleteBlog = async(req,res) => {
 
     try {
         await BlogModel.findByIdAndDelete(id);
-        res.json({redirectUrl: '/'})
+        res.json({redirectUrl: '/bazzle'})
     } catch (error) {
         console.log("Some error :",error)
     }
