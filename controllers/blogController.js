@@ -1,3 +1,4 @@
+import BlogModel from "../models/blogModel"
 
 //get all blogs
 const getAllBlogs = (req,res)=>{
@@ -10,3 +11,8 @@ const getAllBlogs = (req,res)=>{
     }
     // res.sendFile('/views/home.html', { root: __dirname })
 } 
+
+//render create page
+const renderCreatePage = (req,res)=>{
+    res.render('create',{ title: 'Create' })
+}
