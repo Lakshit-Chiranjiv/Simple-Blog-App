@@ -45,3 +45,16 @@ const addBlog = (req,res) => {
             console.log("Some error",err);
         })
 }
+
+//get Single Blog
+const getSingleBlog = async(req,res) => {
+    const { id } = req.params;
+
+    try {
+        const blog = await BlogModel.findById(id)
+        const updateResult = await BlogModel.findByIdAndUpdate(id,{ $inc: { readBy: 1 } })
+        res.render('details', { blog, title: blog.blogTitle })
+    } catch (error) {
+        console.log("Some error :",error)
+    }
+}
