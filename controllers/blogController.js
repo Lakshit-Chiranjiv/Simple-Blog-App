@@ -58,3 +58,15 @@ const getSingleBlog = async(req,res) => {
         console.log("Some error :",error)
     }
 }
+
+//delete blog
+const deleteBlog = async(req,res) => {
+    const { id } = req.params;
+
+    try {
+        await BlogModel.findByIdAndDelete(id);
+        res.json({redirectUrl: '/'})
+    } catch (error) {
+        console.log("Some error :",error)
+    }
+}
